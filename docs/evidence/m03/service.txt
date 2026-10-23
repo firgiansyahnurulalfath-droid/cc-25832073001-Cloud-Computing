@@ -1,0 +1,21 @@
+● cc-m03.service - PTI 2802 M03 Flask Application
+     Loaded: loaded (/etc/systemd/system/cc-m03.service; enabled; preset: enabled)
+     Active: active (running) since Fri 2026-10-23 20:06:26 WIB; 5h 4min ago
+   Main PID: 738 (gunicorn)
+      Tasks: 4 (limit: 537)
+     Memory: 35.5M (peak: 36.0M)
+        CPU: 3.602s
+     CGroup: /system.slice/cc-m03.service
+             ├─738 /srv/cc-m03/.venv/bin/python /srv/cc-m03/.venv/bin/gunicorn --workers 1 --threads 2 --bind 127.0.0.1:8000 --timeout 30 --access-logfile - --error-logfile - app:app
+             └─944 /srv/cc-m03/.venv/bin/python /srv/cc-m03/.venv/bin/gunicorn --workers 1 --threads 2 --bind 127.0.0.1:8000 --timeout 30 --access-logfile - --error-logfile - app:app
+
+Oct 23 23:53:18 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [23/Oct/2026:23:53:18 +0700] "GET / HTTP/1.1" 200 850 "-" "Mozilla/5.0 (compatible; Infrawatch/1.0; +https://infrawat.ch/)"
+Oct 23 23:53:19 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [23/Oct/2026:23:53:19 +0700] "GET /sse HTTP/1.1" 404 207 "-" "Mozilla/5.0 (compatible; Infrawatch/1.0; +https://infrawat.ch/)"
+Oct 23 23:58:53 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [23/Oct/2026:23:58:53 +0700] "GET / HTTP/1.1" 200 850 "-" "Hello from Palo Alto Networks, find out more about our scans in https://docs-cortex.paloaltonetworks.com/r/1/Cortex-Xpanse/Scanning-activity"
+Oct 24 00:10:09 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [24/Oct/2026:00:10:09 +0700] "GET / HTTP/1.1" 200 850 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.85 Safari/537.36"
+Oct 24 00:23:26 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [24/Oct/2026:00:23:26 +0700] "GET / HTTP/1.1" 200 850 "-" "Go-http-client/1.1"
+Oct 24 00:23:26 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [24/Oct/2026:00:23:26 +0700] "GET /autodiscover/autodiscover.xml HTTP/1.1" 404 207 "-" "Go-http-client/1.1"
+Oct 24 00:23:27 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [24/Oct/2026:00:23:27 +0700] "GET /ews/exchange.asmx HTTP/1.1" 404 207 "-" "Go-http-client/1.1"
+Oct 24 00:36:06 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [24/Oct/2026:00:36:06 +0700] "GET / HTTP/1.1" 200 850 "-" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0"
+Oct 24 01:03:06 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [24/Oct/2026:01:03:06 +0700] "GET / HTTP/1.1" 200 850 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.85 Safari/537.36"
+Oct 24 01:04:09 cc-m03-25832073001 gunicorn[944]: 127.0.0.1 - - [24/Oct/2026:01:04:09 +0700] "GET / HTTP/1.1" 200 850 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.6167.85 Safari/537.36"
