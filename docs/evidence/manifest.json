@@ -1,0 +1,13 @@
+{
+  "waktu": "2026-11-09 20:03:28 WIB",
+  "integrity_check": "ok",
+  "row_count": {
+    "produk": 20,
+    "pesanan": 30
+  },
+  "sha256_backup_db": "f4498ebcdcd2ba7490367f0a40297a99e08bc7ca9d92eb555578a0dbf9d7adc5",
+  "datahash": "974d5b07ab59ed3740e91fd48bfef378dfe280d3614f9c69c34da7f368ac497a",
+  "sha256_enc": "fbadc122618c3d028fe6ea4f5ae710a99cd90b1c5e0dd46bd904b8fdd456a3f4",
+  "ukuran_enc_bytes": 1019,
+  "durasi_detik": 0.85
+}

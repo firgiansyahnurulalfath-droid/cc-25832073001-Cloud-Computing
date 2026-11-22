@@ -1,0 +1,15 @@
+{
+  "waktu": "2026-11-09 20:04:17 WIB",
+  "integrity_check": "ok",
+  "row_count": {
+    "produk": 20,
+    "pesanan": 30
+  },
+  "sha256_restored": "f4498ebcdcd2ba7490367f0a40297a99e08bc7ca9d92eb555578a0dbf9d7adc5",
+  "cocok_checksum_file": true,
+  "cocok_data_dengan_asli": true,
+  "cocok_row_count": true,
+  "durasi_detik": 0.14
+}
+d92f7a47ef3e955ed9721e3b18339614a46f13d149fe763c6760436b9eaacaf6  backup_restore.py
+-rw-rw-r-- 1 cloudstudent cloudstudent 12288 2026-11-09 20:04:17.996810652 +0700 restored.db
