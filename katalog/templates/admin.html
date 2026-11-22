@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin | Oleh-oleh Garut</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header><h1>Admin</h1></header>
+<main>
+  <p id="info" role="status"></p>
+  <section id="login" hidden>
+    <h2>Login</h2>
+    <form id="form-login">
+      <label>Username <input name="username" autocomplete="username" required></label>
+      <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+      <button type="submit">Masuk</button>
+    </form>
+  </section>
+  <div id="panel" hidden>
+    <p><button id="keluar" type="button">Keluar</button></p>
+    <section>
+      <h2>Tambah produk</h2>
+      <form id="form-tambah">
+        <label>Nama <input name="nama" required maxlength="80"></label>
+        <label>Harga (Rp) <input name="harga" type="number" min="1000" required></label>
+        <label>Stok <input name="stok" type="number" min="0" required></label>
+        <label>Deskripsi <input name="deskripsi" maxlength="300"></label>
+        <button type="submit">Tambah</button>
+      </form>
+    </section>
+    <section>
+      <h2>Produk</h2>
+      <div class="gulung"><table id="tabel-produk"><thead><tr><th>Nama</th><th>Harga</th><th>Stok</th><th>Aktif</th><th>Aksi</th></tr></thead><tbody></tbody></table></div>
+    </section>
+    <section>
+      <h2>Pesanan</h2>
+      <div class="gulung"><table id="tabel-pesanan"><thead><tr><th>Kode</th><th>Penerima</th><th>Kontak</th><th>Item</th><th>Total</th><th>Status</th><th>Ubah</th></tr></thead><tbody></tbody></table></div>
+    </section>
+  </div>
+</main>
+<script src="{{ url_for('static', filename='admin.js') }}"></script>
+</body>
+</html>

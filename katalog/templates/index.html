@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oleh-oleh Garut | Katalog dan Pemesanan</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header>
+  <h1>Oleh-oleh Garut</h1>
+  <p>Dodol dan wajit khas Garut. Pilih produk, isi data penerima, dan dapatkan kode pesanan.</p>
+</header>
+<main>
+  <section aria-labelledby="h-katalog">
+    <h2 id="h-katalog">Katalog</h2>
+    {% if not produk %}<p>Belum ada produk yang tersedia.</p>{% endif %}
+    <div class="grid" id="katalog">
+      {% for p in produk %}
+      <article class="kartu" data-id="{{ p.id }}">
+        {% if p.foto_url %}<img src="{{ p.foto_url }}" alt="{{ p.nama }}" loading="lazy">{% endif %}
+        <h3>{{ p.nama }}</h3>
+        <p class="harga">Rp {{ "{:,}".format(p.harga).replace(",", ".") }}</p>
+        <p>{{ p.deskripsi }}</p>
+        {% if p.stok > 0 %}
+        <label>Jumlah (stok {{ p.stok }})
+          <input type="number" class="qty" min="0" max="{{ [p.stok, 20]|min }}" value="0" inputmode="numeric">
+        </label>
+        {% else %}<p class="habis">Stok habis</p>{% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section aria-labelledby="h-pesan">
+    <h2 id="h-pesan">Kirim pesanan</h2>
+    <form id="form-pesan" novalidate>
+      <label>Nama penerima <input name="nama" autocomplete="name" required maxlength="60"></label>
+      <label>Nomor telepon atau email <input name="kontak" autocomplete="tel" required maxlength="80"></label>
+      <button type="submit">Pesan sekarang</button>
+    </form>
+    <p id="status-pesan" role="status"></p>
+    <div id="hasil-pesan" hidden>
+      <p>Pesanan diterima. <strong>Simpan kode dan token ini</strong>, token hanya ditampilkan di sini.</p>
+      <p>Kode: <code id="out-kode"></code></p>
+      <p>Token: <code id="out-token"></code></p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-cek">
+    <h2 id="h-cek">Cek pesanan</h2>
+    <form id="form-cek" novalidate>
+      <label>Kode pesanan <input name="kode" required maxlength="20"></label>
+      <label>Token <input name="token" required maxlength="64"></label>
+      <button type="submit">Lihat status</button>
+    </form>
+    <p id="status-cek" role="status"></p>
+    <ul id="detail-cek"></ul>
+  </section>
+</main>
+<footer><small>Lingkungan: {{ app_env }}</small></footer>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
